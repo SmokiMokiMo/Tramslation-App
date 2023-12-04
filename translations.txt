@@ -1,0 +1,5 @@
+confession: сповідь
+on: на
+factual: фактичний
+proficient: досвідчений
+genres: жанри
