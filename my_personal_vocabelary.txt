@@ -827,13 +827,12 @@ iterate                     - повторити
 antique                     - античний
 ironing                     - прасування
 mess                        - безлад
-study                       - кабінет
 the countryside             - в сільській місцевості
 semi-detached house         - двоквартирний будинок
 concrete                    - бетон
 armchair                    - крісло
 hall                        - зал
-study                       - вивчення
+study                       - вивчення/кабінет
 bathroom                    - ванна кімната
 bedroom                     - спальня
 living room                 - вітальня
@@ -858,3 +857,56 @@ actually                    - дійсно/фактично/реально
 agreement                   - угода/договір/згода
 tail                        - хвіст/задні
 proper                      - правильний/відповідний/належне/якісний
+nevertheless                - однак/втім/тим не менше
+eventually                  - зрештою/згодом/пізніше/поступово
+wealthy                     - заможні
+nearly                      - майже
+average                     - середній
+nearby                      - неподалік
+ice-skating                 - катання на ковзанах
+horse-riding                - верхова їзда
+servants                    - слуги
+roof                        - дах
+wig                         - перуку
+duke                        - герцог
+moody                       - примхливий
+collocations                - словосполучення
+tied                        - прив'язаний
+ankles                      - щиколотки
+odd                         - непарний/дивний/незвичайний
+relatives                   - рідні/близьких
+furnitures                  - меблі
+dense                       - щільний
+humid                       - вологий
+insect                      - комаха
+tribe                       - племя
+breathtaking views          - захоплюючі види
+breathtaking                - захоплює дух
+nearest                     - найближчий
+mining town                 - шахтарське місто
+scorching                   - пекучий
+church                      - церква
+eruption                    - виверження
+volcanic                    - вулканічний
+hiking                      - піші прогулянки/походи
+lush                        - пишний
+visitor                     - відвідувач
+gypsies                     - цигани
+stilts                      - ходулі
+ancient                     - давній
+trading center              - торговий центр
+nomadic                     - кочовий
+spectacular                 - видивищний
+nearby                      - неподалік
+souvenir                    - сувенір
+donkey                      - осел
+turquoise                   - бірюзовий
+abandoned                   - покинутий
+sandy                       - піщаний
+chimneys                    - димарні
+chimneys                    - димарі
+traffic jams                - пробки
+lush                        - пишні
+nomadic tribe               - кочове плем'я
+caves                       - печери
+spectacular                 - видовищний

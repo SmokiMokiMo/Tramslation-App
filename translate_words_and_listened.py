@@ -7,6 +7,10 @@ from moviepy.editor import *
 import cv2
 import numpy as np
 from pydub import AudioSegment
+import subprocess
+
+
+
 
 # Set the path to ImageMagick convert binary
 os.environ["IMAGEIO_CONVERT_EXE"] = "/usr/bin/convert"
@@ -15,7 +19,7 @@ class TranslateWord():
     
     def __init__(self) -> None:
         self.file_path = '/home/user/Documents/Setings/Translate_words/test.txt'
-
+        self.path_to_mp3_collections = "audio_files/"
     # Function to translate a word
     def translate_word(self, word, dest='en'):
         translation = translate(word, dest)
@@ -97,6 +101,8 @@ class TranslateWord():
             except Exception as e:
                 print(f"Failed to open audio file: {file}\nError: {str(e)}")
         combined_audio.export(output_file, format='mp3')
+        
+    
 
     def main(self):
         words = self.read_words_from_file(self.file_path)
@@ -105,11 +111,11 @@ class TranslateWord():
         translations = {}
         for word in words:
             ukrainian_translation = self.translate_word(word, dest='uk')
-            ukrainian_audio_file_path = f'{word}_translation_uk.mp3'
+            ukrainian_audio_file_path = f'audio_for_itch_word/{word}_translation_uk.mp3'
             self.save_audio(ukrainian_translation, ukrainian_audio_file_path, lang='uk')
 
             english_translation = self.translate_word(word)
-            english_audio_file_path = f'{word}_translation_en.mp3'
+            english_audio_file_path = f'audio_for_itch_word/{word}_translation_en.mp3'
             self.save_audio(english_translation, english_audio_file_path)
 
             for _ in range(0, 3):
@@ -126,9 +132,25 @@ class TranslateWord():
             print(f"Function main: write '{key}: {value}' in to 'translations.txt' file")
             time.sleep(0.5)
 
-        self.concatenate_audio_files(audio_files, 'all3_translations.mp3')
+        self.concatenate_audio_files(audio_files, f'audio_files/{self.check_if_mp3_file_exist('all3_translations')}')
         #create_video(audio_files, 'output.mp4', words)
+        return True
+    
+    def check_if_mp3_file_exist(self, name_of_file:str):        
+        result = subprocess.run(['ls', '-ll', f"{self.path_to_mp3_collections}"], capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"Error 'check_if_mp3_file_exist' code is - {result.returncode}")
+        data = result.stdout.rstrip().split("\n")        
+        name_of_file = {num: y for num, x in enumerate(data) for y in x.split(' ') if y.startswith(name_of_file)}
+        if len(name_of_file.keys()) >=1:
+            name = f"all3_translations_{list(name_of_file.keys())[-1]}.mp3"            
+            return name
+        else:
+            name = "all3_translations.mp3"            
+            return name
+        
 
+  
 if __name__ == '__main__':
     tw = TranslateWord()
     tw.main()

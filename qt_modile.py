@@ -70,7 +70,7 @@ class MyWidget(QWidget):
 
 if __name__ == "__main__":
 
-    gi = GetImages('camber')   
+    gi = GetImages('anna')   
     content = gi.get_image_from_unsplash()    
     image = gi.download_image(content)
     
